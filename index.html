@@ -5,38 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Decors</title>
 
-  <!-- Fonte bonita -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
+    *{
+      box-sizing:border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #fff0f5;
       color: #333;
+      background:
+        radial-gradient(circle at top left,#ffd6e7 0%,transparent 30%),
+        radial-gradient(circle at bottom right,#ffc2d1 0%,transparent 30%),
+        #fff0f5;
+      overflow-x:hidden;
+    }
+
+    /* Emojis flutuando */
+    .floating{
+      position:fixed;
+      font-size:22px;
+      opacity:.35;
+      pointer-events:none;
+      z-index:999;
+      animation:subir 16s linear infinite;
+    }
+
+    .f1{left:3%;animation-delay:0s;}
+    .f2{left:12%;animation-delay:4s;}
+    .f3{right:5%;animation-delay:2s;}
+    .f4{right:18%;animation-delay:8s;}
+    .f5{left:28%;animation-delay:10s;}
+    .f6{right:30%;animation-delay:12s;}
+
+    @keyframes subir{
+      from{
+        transform:translateY(110vh) rotate(0deg);
+      }
+      to{
+        transform:translateY(-120px) rotate(360deg);
+      }
     }
 
     header {
       text-align: center;
       background: linear-gradient(135deg, #ff8fab, #ffc2d1);
-      padding: 40px 20px;
+      padding: 45px 20px;
       color: white;
+      box-shadow:0 4px 15px rgba(0,0,0,.1);
     }
 
     header h1 {
       margin: 0;
-      font-size: 34px;
+      font-size: 38px;
       font-weight: 700;
     }
 
     header p {
-      margin-top: 5px;
+      margin-top: 8px;
       font-weight: 300;
     }
 
     .kits {
-      padding: 30px;
+      padding: 30px 15px;
       text-align: center;
+    }
+
+    .obs {
+      max-width: 500px;
+      margin: 0 auto 25px auto;
+      background: rgba(255,255,255,.8);
+      border: 2px solid #ff8fab;
+      border-radius: 15px;
+      padding: 15px;
+      font-weight: 500;
+      color: #ff4d88;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
     }
 
     .card {
@@ -44,18 +90,33 @@
       margin: 20px auto;
       padding: 20px;
       border-radius: 20px;
-      max-width: 320px;
+      max-width: 340px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      transition: .3s;
+      animation: flutuar 4s ease-in-out infinite;
+    }
+
+    @keyframes flutuar{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-5px);
+      }
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: scale(1.03);
     }
 
     .card img {
       width: 100%;
       border-radius: 15px;
+    }
+
+    .emoji-card{
+      font-size:32px;
+      margin-bottom:10px;
     }
 
     .card h3 {
@@ -68,6 +129,7 @@
       font-size: 24px;
       font-weight: 700;
       margin: 10px 0;
+      color:#ff0066;
     }
 
     .botao {
@@ -77,7 +139,8 @@
       color: white;
       text-decoration: none;
       border-radius: 10px;
-      transition: 0.3s;
+      transition: .3s;
+      font-weight:600;
     }
 
     .botao:hover {
@@ -85,12 +148,13 @@
     }
 
     .destaque {
-      border: 2px solid #ff4d88;
+      border: 3px solid #ff4d88;
+      box-shadow: 0 0 25px rgba(255,77,136,.35);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
     .whatsapp {
@@ -101,6 +165,7 @@
       color: white;
       text-decoration: none;
       border-radius: 30px;
+      font-weight:600;
     }
 
     .insta {
@@ -110,6 +175,7 @@
     .insta a {
       color: #ff4d88;
       text-decoration: none;
+      font-weight:600;
     }
 
     .direitos {
@@ -121,18 +187,31 @@
 </head>
 <body>
 
+<!-- Emojis flutuando -->
+<div class="floating f1">💗</div>
+<div class="floating f2">🌸</div>
+<div class="floating f3">💕</div>
+<div class="floating f4">🎀</div>
+<div class="floating f5">💖</div>
+<div class="floating f6">🌷</div>
+
 <header>
-  <h1>Mi Decors</h1>
-  <p>Kits Pegue e Monte para sua Mini Festa</p>
+  <h1>💖 Mi Decors 💖</h1>
+  <p>Kits Pegue e Monte para sua Mini Festa ✨</p>
 </header>
 
 <section class="kits">
-  <h2>Nossos Kits</h2>
+  <h2>🎈 Nossos Kits 🎈</h2>
+
+  <div class="obs">
+    🎀 Mini Arco de Balões disponível como adicional por apenas <strong>+ R$ 20,00</strong> 🎀
+  </div>
 
   <!-- KIT 1 -->
   <div class="card">
-    <img src="https://cdn.discordapp.com/attachments/1443369107973083357/1488528399264911510/IMG-20260331-WA0087.jpg">
-    <h3>Kit Básico</h3>
+    <div class="emoji-card">🎀</div>
+    <img src="https://cdn.discordapp.com/attachments/1443369107973083357/1488528399264911510/IMG-20260331-WA0087.jpg" alt="Kit Básico">
+    <h3>🎀 Kit Básico</h3>
     <p>Painel • Bandejas • Jarro</p>
     <span class="preco">R$ 30,00</span>
     <a href="https://wa.me/5585991745998?text=Olá%2C%20tenho%20interesse%20no%20kit%20de%2030%20reais" class="botao">
@@ -142,8 +221,9 @@
 
   <!-- KIT 2 -->
   <div class="card">
-    <img src="https://cdn.discordapp.com/attachments/1443369107973083357/1488528388502192158/IMG-20260331-WA0084.jpg">
-    <h3>Kit Intermediário</h3>
+    <div class="emoji-card">🩷</div>
+    <img src="https://cdn.discordapp.com/attachments/1443369107973083357/1488528388502192158/IMG-20260331-WA0084.jpg" alt="Kit Intermediário">
+    <h3>🩷 Kit Intermediário</h3>
     <p>Painel • Bandejas • Jarro • Mesa • Tapete</p>
     <span class="preco">R$ 50,00</span>
     <a href="https://wa.me/5585991745998?text=Olá%2C%20tenho%20interesse%20no%20kit%20de%2050%20reais" class="botao">
@@ -153,8 +233,9 @@
 
   <!-- KIT 3 -->
   <div class="card destaque">
-    <img src="https://cdn.discordapp.com/attachments/1443369107973083357/1488528378397986846/IMG-20260331-WA0086.jpg">
-    <h3>Kit Completo</h3>
+    <div class="emoji-card">👑</div>
+    <img src="https://cdn.discordapp.com/attachments/1443369107973083357/1488528378397986846/IMG-20260331-WA0086.jpg" alt="Kit Completo">
+    <h3>👑 Kit Completo</h3>
     <p>Painel • Bandejas • Jarro • Mesa • Tapete • Cavalete</p>
     <span class="preco">R$ 70,00</span>
     <a href="https://wa.me/5585991745998?text=Olá.%20Tenho%20interesse%20no%20kit%20de%2070%20reais" class="botao">
@@ -166,18 +247,18 @@
 
 <footer>
   <a href="https://wa.me/5585991745998?text=Olá%2C%20tenho%20interesse%20nos%20kits%20pegue%20e%20monte" class="whatsapp">
-    Fale no WhatsApp
+    💬 Fale no WhatsApp
   </a>
 
   <div class="insta">
-    Instagram:
+    📸 Instagram:
     <a href="https://instagram.com/pegueemonte0520" target="_blank">
       @pegueemonte0520
     </a>
   </div>
 
   <div class="direitos">
-    © 2026 Mi Decors - Todos os direitos reservados
+    © 2026 Mi Decors - Todos os direitos reservados 💗
   </div>
 </footer>
 
